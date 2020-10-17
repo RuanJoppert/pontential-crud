@@ -14,6 +14,7 @@ module.exports = {
   },
   plugins: ['prettier', '@typescript-eslint'],
   rules: {
+    'no-useless-constructor': 'off',
     'space-before-function-paren': 'off',
     'prettier/prettier': ['error', { ...prettier }]
   }
