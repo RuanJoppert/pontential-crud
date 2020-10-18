@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS `developers`;
+CREATE DATABASE IF NOT EXISTS `developers-test`;
