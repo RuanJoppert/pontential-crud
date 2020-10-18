@@ -56,24 +56,15 @@ export class Developer {
       Nome.create(props.nome),
       Sexo.create(props.sexo),
       DataNascimento.create(props.datanascimento),
-      props.hobby
+      props.hobby,
+      id || UniqueEntityID.create()
     )
 
     if (result.fail === true) {
       return Result.fail(result.error)
     }
 
-    const [nome, sexo, datanascimento, hobby] = result.unwrap()
-
-    if (!id) {
-      const uuid = UniqueEntityID.create()
-
-      if (uuid.fail === true) {
-        return Result.fail([uuid.error])
-      }
-
-      id = uuid.value.value
-    }
+    const [nome, sexo, datanascimento, hobby, uuid] = result.unwrap()
 
     const dev = new Developer(
       {
@@ -82,11 +73,30 @@ export class Developer {
         datanascimento: datanascimento.value,
         hobby
       },
-      id
+      typeof uuid === 'string' ? uuid : uuid.ok ? uuid.value.value : ''
     )
 
     return Result.ok(dev)
   }
 
-  static update() {}
+  static from(developer: Developer) {
+    return new Developer(developer, developer._id)
+  }
+
+  update(props: Partial<DeveloperProps>) {
+    const result = Result.from(
+      Nome.create(props.nome || this.nome),
+      Sexo.create(props.sexo || this.sexo),
+      DataNascimento.create(props.datanascimento || this.datanascimento),
+      props.hobby
+    )
+
+    if (result.fail === true) {
+      return Result.fail(result.error)
+    }
+
+    Object.assign(this, props)
+
+    return Result.ok(this)
+  }
 }
