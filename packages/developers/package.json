@@ -7,16 +7,16 @@
     "url": "git+https://github.com/RuanJoppert/pontential-crud.git"
   },
   "scripts": {
-    "dev": "tsnd --transpile-only --respawn --ignore-watch node_modules  src/index.ts",
+    "dev": "tsnd --transpile-only --respawn --ignore-watch node_modules -r dotenv/config src/index.ts",
     "build": "rm -rf dist && tsc",
-    "test": "jest --setupFiles dotenv/config --runInBand --verbose",
-    "knex:migrate:make": "knex migrate:make --knexfile src/application/infra/db/knexfile.ts --env production",
-    "knex:migrate:latest": "knex migrate:latest --knexfile src/application/infra/db/knexfile.ts --env production",
-    "knex:migrate:rollback": "knex migrate:rollback --knexfile src/application/infra/db/knexfile.ts --env production"
+    "test": "jest --setupFiles ./setupTests.ts --dotenv_config_path=/.env.test --runInBand --verbose",
+    "knex": "knex --knexfile src/application/infra/db/knexfile.ts"
   },
   "devDependencies": {
+    "@types/faker": "^5.1.2",
     "@types/jest": "^26.0.14",
     "@types/uuid": "^8.3.0",
+    "faker": "^5.1.0",
     "jest": "^26.5.3",
     "ts-jest": "^26.4.1"
   },
