@@ -4,7 +4,7 @@ module.exports = {
   coverageDirectory: 'coverage',
   coveragePathIgnorePatterns: ['/node_modules/', '/dist/'],
   coverageProvider: 'v8',
-  globals: { 'ts-jest': { diagnostics: true } },
+  globals: { 'ts-jest': { diagnostics: false } },
   preset: 'ts-jest',
   testEnvironment: 'node',
   testMatch: ['**/?(*.)+(spec|test).[tj]s?(x)']
