@@ -9,7 +9,10 @@
   "scripts": {
     "dev": "tsnd --transpile-only --respawn --ignore-watch node_modules  src/index.ts",
     "build": "rm -rf dist && tsc",
-    "test": "jest --runInBand --verbose"
+    "test": "jest --runInBand --verbose",
+    "knex:migrate:make": "knex migrate:make --knexfile src/application/infra/db/knexfile.ts --env production",
+    "knex:migrate:latest": "knex migrate:latest --knexfile src/application/infra/db/knexfile.ts --env production",
+    "knex:migrate:rollback": "knex migrate:rollback --knexfile src/application/infra/db/knexfile.ts --env production"
   },
   "devDependencies": {
     "@types/jest": "^26.0.14",
@@ -21,6 +24,9 @@
     "@potential-crud/code-styleguide": "^0.1.0",
     "@potential-crud/errors": "^0.1.0",
     "@potential-crud/result": "^0.1.0",
+    "dotenv": "^8.2.0",
+    "knex": "^0.21.6",
+    "mysql": "^2.18.1",
     "shallow-equal-object": "^1.1.1",
     "uuid": "^8.3.1"
   }
