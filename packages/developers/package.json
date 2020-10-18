@@ -1,0 +1,27 @@
+{
+  "name": "@potential-crud/developers",
+  "version": "0.1.0",
+  "main": "lib/developers.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RuanJoppert/pontential-crud.git"
+  },
+  "scripts": {
+    "dev": "tsnd --transpile-only --respawn --ignore-watch node_modules  src/index.ts",
+    "build": "rm -rf dist && tsc",
+    "test": "jest --runInBand --verbose"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.14",
+    "@types/uuid": "^8.3.0",
+    "jest": "^26.5.3",
+    "ts-jest": "^26.4.1"
+  },
+  "dependencies": {
+    "@potential-crud/code-styleguide": "^0.1.0",
+    "@potential-crud/errors": "^0.1.0",
+    "@potential-crud/result": "^0.1.0",
+    "shallow-equal-object": "^1.1.1",
+    "uuid": "^8.3.1"
+  }
+}
