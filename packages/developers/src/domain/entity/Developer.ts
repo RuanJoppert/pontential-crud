@@ -56,15 +56,24 @@ export class Developer {
       Nome.create(props.nome),
       Sexo.create(props.sexo),
       DataNascimento.create(props.datanascimento),
-      props.hobby,
-      id || UniqueEntityID.create()
+      props.hobby
     )
 
     if (result.fail === true) {
       return Result.fail(result.error)
     }
 
-    const [nome, sexo, datanascimento, hobby, uuid] = result.unwrap()
+    const [nome, sexo, datanascimento, hobby] = result.unwrap()
+
+    if (!id) {
+      const uuid = UniqueEntityID.create()
+
+      if (uuid.fail === true) {
+        return Result.fail([uuid.error])
+      }
+
+      id = uuid.value.value
+    }
 
     const dev = new Developer(
       {
@@ -73,14 +82,21 @@ export class Developer {
         datanascimento: datanascimento.value,
         hobby
       },
-      typeof uuid === 'string' ? uuid : uuid.ok ? uuid.value.value : ''
+      id
     )
 
     return Result.ok(dev)
   }
 
-  static from(developer: Developer) {
-    return new Developer(developer, developer._id)
+  static from<T>(developer: T): T {
+    if (developer instanceof Array) {
+      return (developer.map((dev) => new Developer(dev, dev._id)) as unknown) as T
+    }
+
+    const dev = developer as any
+    const id = dev._id
+
+    return (new Developer(dev as any, id) as unknown) as T
   }
 
   update(props: Partial<DeveloperProps>) {
