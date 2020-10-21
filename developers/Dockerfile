@@ -1,4 +1,4 @@
-FROM build AS builder
+FROM potential-crud-api-builder AS builder
 RUN npm run build
 
 FROM node:12-alpine AS production

@@ -32,7 +32,7 @@ inicie o desenvolvimento
 ```sh
 npm run dev
 ```
->Também é possivel rodar as migrations utlilizando o comando **npm run knex migrate:latest** popular a base usando o comando **npm run knex seed:run**
+>Também é possivel rodar as migrations utlilizando o comando **npm run knex migrate:latest** e popular a base usando o comando **npm run knex seed:run**
 
 para rodar o build
 ```sh
