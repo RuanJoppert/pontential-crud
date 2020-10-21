@@ -2,10 +2,7 @@
   "name": "potential-crud-code-styleguide",
   "version": "0.2.0",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RuanJoppert/pontential-crud.git"
-  },
+  "repository": "git+https://github.com/RuanJoppert/pontential-crud.git",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.4.1",
     "@typescript-eslint/parser": "^4.4.1",
@@ -18,5 +15,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "prettier": "^2.1.2"
-  }
+  },
+  "gitHead": "87e57617f8b4a319fa925b080b015251224b7f6b",
+  "license": "MIT"
 }

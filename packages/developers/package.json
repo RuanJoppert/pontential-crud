@@ -2,10 +2,7 @@
   "name": "potential-crud-developers",
   "version": "0.2.0",
   "main": "dist/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RuanJoppert/pontential-crud.git"
-  },
+  "repository": "git+https://github.com/RuanJoppert/pontential-crud.git",
   "scripts": {
     "dev": "tsnd --transpile-only --respawn --ignore-watch node_modules -r dotenv/config src/index.ts",
     "build": "rm -rf dist && tsc",
@@ -19,11 +16,13 @@
     "ts-node-dev": "^1.0.0"
   },
   "dependencies": {
+    "nanoid": "^3.1.12",
     "potential-crud-code-styleguide": "^0.2.0",
     "potential-crud-errors": "^0.2.0",
     "potential-crud-result": "^0.2.0",
-    "nanoid": "^3.1.12",
     "shallow-equal-object": "^1.1.1",
     "typescript": "^4.0.3"
-  }
+  },
+  "gitHead": "87e57617f8b4a319fa925b080b015251224b7f6b",
+  "license": "MIT"
 }
