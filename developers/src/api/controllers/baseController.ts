@@ -58,7 +58,7 @@ export abstract class BaseController {
       return errors
     }, [])
 
-    return this.res.status(status || error[0].httpCode).json({
+    return this.res.status(status || error[0].httpCode || 500).json({
       type: 'error',
       errors
     })

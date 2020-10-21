@@ -55,7 +55,7 @@ export class DeveloperRepository implements IDeveloperRepository {
       delete filter.idade
     }
 
-    developers.where(filter).offset(offset).limit(limit).orderBy('created_at', 'desc')
+    developers.where(filter).offset(offset).limit(limit).orderBy('developer_id', 'desc')
 
     return Developer.from(await developers)
   }

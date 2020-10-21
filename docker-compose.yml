@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  database:
-    container_name: database
+  potential-crud-db:
+    container_name: potential-crud-db
     image: mysql:5.7
     restart: unless-stopped
     ports:
@@ -13,24 +13,32 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
 
-  database-production:
-    container_name: database-production
-    image: mysql:5.7
-    restart: unless-stopped
-    ports:
-      - "3306:3306"
-    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+  potential-crud-api-builder:
+    container_name: potential-crud-api-builder
+    image: potential-crud-api-builder
+    build:
+      context: ./developers/
+      dockerfile: Dockerfile.builder
+    env_file:
+      - ./developers/.env
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: developers
+      DB_HOST: potential-crud-db
+      DB_PORT: 3306
+    command: ./wait-for-it.sh potential-crud-db:3306 --timeout=5000 -- npm run bootstrap
+    depends_on:
+      - potential-crud-db
 
-  api:
-    container_name: api
+  potential-crud-api:
+    container_name: potential-crud-api
     build: ./developers
     restart: unless-stopped
     ports:
-      - "3306:3306"
-    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+      - "3000:3000"
+    env_file:
+      - ./developers/.env
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: developers
+      NODE_ENV: production
+      DB_PORT: 3306
+      DB_HOST: potential-crud-db
+    depends_on:
+      - potential-crud-api-builder
