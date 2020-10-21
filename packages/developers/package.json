@@ -1,5 +1,5 @@
 {
-  "name": "@potential-crud/developers",
+  "name": "potential-crud-developers",
   "version": "0.2.0",
   "main": "dist/index.js",
   "repository": {
@@ -19,9 +19,9 @@
     "ts-node-dev": "^1.0.0"
   },
   "dependencies": {
-    "@potential-crud/code-styleguide": "^0.2.0",
-    "@potential-crud/errors": "^0.2.0",
-    "@potential-crud/result": "^0.2.0",
+    "potential-crud-code-styleguide": "^0.2.0",
+    "potential-crud-errors": "^0.2.0",
+    "potential-crud-result": "^0.2.0",
     "nanoid": "^3.1.12",
     "shallow-equal-object": "^1.1.1",
     "typescript": "^4.0.3"

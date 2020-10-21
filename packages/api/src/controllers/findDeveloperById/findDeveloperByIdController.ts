@@ -1,7 +1,7 @@
-import { IDeveloperRepository, Developer } from '@potential-crud/developers'
+import { IDeveloperRepository, Developer } from 'potential-crud-developers'
 import { BaseController } from '../baseController'
-import { FindDeveloperByIdUseCase } from '@potential-crud/application'
-import { AppError } from '@potential-crud/errors'
+import { FindDeveloperByIdUseCase } from 'potential-crud-application'
+import { AppError } from 'potential-crud-errors'
 
 export class FindDeveloperByIdController extends BaseController {
   private developerRepository: IDeveloperRepository

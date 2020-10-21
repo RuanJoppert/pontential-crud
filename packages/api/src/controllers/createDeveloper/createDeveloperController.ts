@@ -1,6 +1,6 @@
-import { IDeveloperRepository } from '@potential-crud/developers'
+import { IDeveloperRepository } from 'potential-crud-developers'
 import { BaseController } from '../baseController'
-import { CreateDeveloperUseCase } from '@potential-crud/application'
+import { CreateDeveloperUseCase } from 'potential-crud-application'
 
 export class CreateDeveloperController extends BaseController {
   private developerRepository: IDeveloperRepository

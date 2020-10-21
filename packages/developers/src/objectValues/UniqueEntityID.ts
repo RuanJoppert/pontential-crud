@@ -1,5 +1,5 @@
-import { Result } from '@potential-crud/result'
-import { AppError } from '@potential-crud/errors'
+import { Result } from 'potential-crud-result'
+import { AppError } from 'potential-crud-errors'
 import { ValueObject } from './valueObject'
 import { nanoid } from 'nanoid'
 

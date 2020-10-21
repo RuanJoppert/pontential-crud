@@ -1,5 +1,5 @@
 import Knex from 'knex'
-import { Developer, DeveloperProps, IDeveloperRepository } from '@potential-crud/developers'
+import { Developer, DeveloperProps, IDeveloperRepository } from 'potential-crud-developers'
 
 export class DeveloperRepository implements IDeveloperRepository {
   private knex: Knex

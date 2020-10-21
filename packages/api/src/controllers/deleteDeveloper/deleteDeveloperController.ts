@@ -1,6 +1,6 @@
-import { IDeveloperRepository } from '@potential-crud/developers'
+import { IDeveloperRepository } from 'potential-crud-developers'
 import { BaseController } from '../baseController'
-import { DeleteDeveloperUseCase } from '@potential-crud/application'
+import { DeleteDeveloperUseCase } from 'potential-crud-application'
 
 export class DeleteDeveloperController extends BaseController {
   private developerRepository: IDeveloperRepository

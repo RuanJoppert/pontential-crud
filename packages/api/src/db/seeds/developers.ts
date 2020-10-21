@@ -1,6 +1,6 @@
 import * as Knex from 'knex'
 import faker from 'faker'
-import { Developer } from '@potential-crud/developers'
+import { Developer } from 'potential-crud-developers'
 
 const createFakeDeveloper = () => {
   const dev = Developer.create({

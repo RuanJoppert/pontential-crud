@@ -1,4 +1,4 @@
-import { Developer, DeveloperProps } from '@potential-crud/developers'
+import { Developer, DeveloperProps } from 'potential-crud-developers'
 import { knex } from '../../queryBuilder'
 import { DeveloperRepository } from './DeveloperRepository'
 

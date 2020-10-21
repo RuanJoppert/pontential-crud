@@ -1,6 +1,6 @@
-import { IDeveloperRepository, Developer } from '@potential-crud/developers'
+import { IDeveloperRepository, Developer } from 'potential-crud-developers'
 import { BaseController } from '../baseController'
-import { FindDeveloperUseCase } from '@potential-crud/application'
+import { FindDeveloperUseCase } from 'potential-crud-application'
 
 export class FindDevelopersController extends BaseController {
   private developerRepository: IDeveloperRepository

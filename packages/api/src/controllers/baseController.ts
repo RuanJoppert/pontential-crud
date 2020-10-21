@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express'
-import { BaseError } from '@potential-crud/errors'
+import { BaseError } from 'potential-crud-errors'
 
 export abstract class BaseController {
   protected req: Request

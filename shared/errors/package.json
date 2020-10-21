@@ -1,5 +1,5 @@
 {
-  "name": "@potential-crud/errors",
+  "name": "potential-crud-errors",
   "version": "0.2.0",
   "main": "dist/index.js",
   "repository": {
@@ -10,7 +10,7 @@
     "build": "rm -rf dist && tsc"
   },
   "dependencies": {
-    "@potential-crud/code-styleguide": "^0.2.0",
+    "potential-crud-code-styleguide": "^0.2.0",
     "typescript": "^4.0.3"
   }
 }

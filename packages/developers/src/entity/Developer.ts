@@ -1,4 +1,4 @@
-import { Result } from '@potential-crud/result'
+import { Result } from 'potential-crud-result'
 import { DataNascimento, Nome, Sexo, UniqueEntityID } from '../objectValues'
 
 export interface DeveloperProps {

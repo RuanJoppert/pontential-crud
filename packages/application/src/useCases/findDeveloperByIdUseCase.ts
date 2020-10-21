@@ -1,6 +1,6 @@
-import { IDeveloperRepository } from '@potential-crud/developers'
-import { AppError } from '@potential-crud/errors'
-import { Result } from '@potential-crud/result'
+import { IDeveloperRepository } from 'potential-crud-developers'
+import { AppError } from 'potential-crud-errors'
+import { Result } from 'potential-crud-result'
 
 export class FindDeveloperByIdUseCase {
   private developerRepository: IDeveloperRepository

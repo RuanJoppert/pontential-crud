@@ -1,5 +1,5 @@
-import { IDeveloperRepository } from '@potential-crud/developers'
-import { Result } from '@potential-crud/result'
+import { IDeveloperRepository } from 'potential-crud-developers'
+import { Result } from 'potential-crud-result'
 
 export class FindDeveloperUseCase {
   /**
