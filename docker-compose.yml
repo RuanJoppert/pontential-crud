@@ -20,7 +20,7 @@ services:
       context: ./developers/
       dockerfile: Dockerfile.builder
     env_file:
-      - ./developers/.env
+      - ./developers/.example.env
     environment:
       DB_HOST: potential-crud-db
       DB_PORT: 3306
@@ -35,7 +35,7 @@ services:
     ports:
       - "3000:3000"
     env_file:
-      - ./developers/.env
+      - ./developers/.example.env
     environment:
       NODE_ENV: production
       DB_PORT: 3306

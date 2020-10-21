@@ -13,7 +13,7 @@ git clone https://github.com/RuanJoppert/pontential-crud.git
 ## Execução
 ### Para rodar o projeto no docker:
 ```sh
-docker-compose up --build
+docker-compose up -d --build
 ``` 
 >O comando acima irá criar o banco de dados com a estrutura correta e popular com alguns registros utilizando o [faker](https://github.com/Marak/faker.js)
 
