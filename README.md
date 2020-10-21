@@ -1,70 +1,51 @@
-# pontential-crud
-Potencial para um crud
+# devApp
+> Potencial para um crud
 
+Api REST bem simples mas seguindo as boas praticas do SOLID, TDD e Clean Architeture (*sem overkill*)
 
-# Objetivo do teste
-Desenvolver uma API JSON REST na *linguagem a sua escolha*, que utilize os métodos (​GET​, ​POST​, ​PUT​,
-DELETE​).
+## Instalação
 
-# Especificação
-Monte uma base de desenvolvedores com a seguinte estrutura:
+Clone o repositório
+```sh
+git clone https://github.com/RuanJoppert/pontential-crud.git
+``` 
 
+## Execução
+### Para rodar o projeto no docker:
+```sh
+docker-compose up --build
+``` 
+>O comando acima irá criar o banco de dados com a estrutura correta e popular com alguns registros utilizando o [faker](https://github.com/Marak/faker.js)
+
+### Para em modo de desenvolvimento:
+entre na pasta **developers**
+```sh
+cd ./developers
 ```
-nome: varchar
-sexo: char
-idade: integer
-hobby: varchar
-datanascimento: date
+
+instale as dependências
+```sh
+npm install
 ```
 
-Utilize o ​banco de dados​ de sua preferência para armazenar os dados que a API irá
-consumir.
+inicie o desenvolvimento
+```sh
+npm run dev
+```
+>Também é possivel rodar as migrations utlilizando o comando **npm run knex migrate:latest** popular a base usando o comando **npm run knex seed:run**
 
-# API endpoints
+para rodar o build
+```sh
+npm run build
+```
 
-```
-GET /developers
-Codes 200
-```
-Retorna todos os desenvolvedores
+## testes
 
+Para rodar a suite de testes
 ```
-GET /developers?
-Codes 200 / 404
-```
-Retorna os desenvolvedores de acordo com o termo passado via querystring e
-paginação
+cd ./developers && run npm test
+``` 
 
-```
-GET /developers/{id}
-Codes 200 / 404
-```
-Retorna os dados de um desenvolvedor
+## Rotas
 
-```
-POST /developers
-Codes 201 / 400
-```
-Adiciona um novo desenvolvedor
-
-```
-PUT /developers/{id}
-Codes 200 / 400
-```
-Atualiza os dados de um desenvolvedor
-
-```
-DELETE /developers/{id}
-Codes 204 / 400
-```
-Apaga o registro de um desenvolvedor
-
-# DIFERENCIAL PARA VAGA SENIOR -  Frontend
-UI/UX fica a critério do desenvolvedor porém deverá ser SPA (single-page
-application) e atender o consumo de todos endpoints da API 
-
-# Entrega
-A aplicação deve rodar em docker, possuir um script para geração das tabelas no banco de dados e TESTES UNITÁRIOS.
-
-Após finalizado o link do projeto, por e-mail, no github com explicação no README
-
+A documentação das rotas podem ser [acessadas aqui](https://github.com/nelsonptobias/pontential-crud)
