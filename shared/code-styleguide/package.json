@@ -1,16 +1,12 @@
 {
   "name": "@potential-crud/code-styleguide",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RuanJoppert/pontential-crud.git"
   },
   "dependencies": {
-    "@potential-crud/application": "^0.1.0",
-    "@potential-crud/developers": "^0.1.0",
-    "@potential-crud/errors": "^0.1.0",
-    "@potential-crud/result": "^0.1.0",
     "@typescript-eslint/eslint-plugin": "^4.4.1",
     "@typescript-eslint/parser": "^4.4.1",
     "eslint": "^7.11.0",

@@ -1,6 +1,6 @@
 {
   "name": "@potential-crud/api",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "dist/index.js",
   "files": [
     "dist"
@@ -28,11 +28,11 @@
     "ts-node-dev": "^1.0.0"
   },
   "dependencies": {
-    "@potential-crud/application": "^0.1.0",
-    "@potential-crud/code-styleguide": "^0.1.0",
-    "@potential-crud/developers": "^0.1.0",
-    "@potential-crud/errors": "^0.1.0",
-    "@potential-crud/result": "^0.1.0",
+    "@potential-crud/application": "^0.2.0",
+    "@potential-crud/code-styleguide": "^0.2.0",
+    "@potential-crud/developers": "^0.2.0",
+    "@potential-crud/errors": "^0.2.0",
+    "@potential-crud/result": "^0.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "knex": "^0.21.6",
