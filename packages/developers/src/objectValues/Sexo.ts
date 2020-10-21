@@ -1,5 +1,5 @@
 import { Result } from '@potential-crud/result'
-import { DomainError } from '@potential-crud/errors'
+import { AppError } from '@potential-crud/errors'
 import { ValueObject } from './valueObject'
 
 type SexoType = 'M' | 'F'
@@ -26,8 +26,10 @@ export class Sexo extends ValueObject<SexoProps> {
   }
 
   static create(sexo: SexoType) {
+    sexo = sexo.toUpperCase() as SexoType
+
     if (!this.isValid(sexo)) {
-      return Result.fail(new DomainError.InvalidInput('Sexo must be M or F'))
+      return Result.fail(new AppError.InvalidInput('Sexo must be M or F'))
     }
 
     return Result.ok(new Sexo({ sexo }))

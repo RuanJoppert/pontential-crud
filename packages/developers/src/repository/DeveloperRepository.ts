@@ -1,4 +1,4 @@
-import { Developer, DeveloperProps } from '../entity/Developer'
+import { Developer, DeveloperProps } from '../entity'
 
 export interface IDeveloperRepository {
   create(developer: DeveloperProps, id?: string): Promise<Developer>

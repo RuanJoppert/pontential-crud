@@ -1,5 +1,5 @@
 import { Result } from '@potential-crud/result'
-import { DomainError } from '@potential-crud/errors'
+import { AppError } from '@potential-crud/errors'
 import { ValueObject } from './valueObject'
 
 interface NomeProps {
@@ -16,7 +16,7 @@ export class Nome extends ValueObject<NomeProps> {
   }
 
   static isValid(nome: string) {
-    if (!nome || nome.length <= 3 || nome.length > 100) {
+    if (!nome || nome.length < 3 || nome.length > 100) {
       return false
     }
 
@@ -25,7 +25,7 @@ export class Nome extends ValueObject<NomeProps> {
 
   static create(nome: string) {
     if (this.isValid(nome) === false) {
-      return Result.fail(new DomainError.InvalidInput('Nome must be greater than 2 chars and less than 100'))
+      return Result.fail(new AppError.InvalidInput('Nome must be greater than 2 chars and less than 100'))
     }
 
     return Result.ok(new Nome({ nome }))

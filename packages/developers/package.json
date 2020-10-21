@@ -1,7 +1,7 @@
 {
   "name": "@potential-crud/developers",
   "version": "0.1.0",
-  "main": "lib/developers.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RuanJoppert/pontential-crud.git"
@@ -9,25 +9,21 @@
   "scripts": {
     "dev": "tsnd --transpile-only --respawn --ignore-watch node_modules -r dotenv/config src/index.ts",
     "build": "rm -rf dist && tsc",
-    "test": "jest --setupFiles ./setupTests.ts --dotenv_config_path=/.env.test --runInBand --verbose",
-    "knex": "knex --knexfile src/application/infra/db/knexfile.ts"
+    "test": "jest --runInBand --verbose"
   },
   "devDependencies": {
-    "@types/faker": "^5.1.2",
     "@types/jest": "^26.0.14",
-    "@types/uuid": "^8.3.0",
-    "faker": "^5.1.0",
+    "@types/nanoid": "^2.1.0",
     "jest": "^26.5.3",
-    "ts-jest": "^26.4.1"
+    "ts-jest": "^26.4.1",
+    "ts-node-dev": "^1.0.0"
   },
   "dependencies": {
     "@potential-crud/code-styleguide": "^0.1.0",
     "@potential-crud/errors": "^0.1.0",
     "@potential-crud/result": "^0.1.0",
-    "dotenv": "^8.2.0",
-    "knex": "^0.21.6",
-    "mysql": "^2.18.1",
+    "nanoid": "^3.1.12",
     "shallow-equal-object": "^1.1.1",
-    "uuid": "^8.3.1"
+    "typescript": "^4.0.3"
   }
 }

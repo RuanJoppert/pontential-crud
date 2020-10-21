@@ -7,6 +7,12 @@ describe('DataNascimento Object Value', () => {
     expect(data.fail).toBe(true)
     expect(data.error).toBeInstanceOf(Error)
     expect(data.error.message === 'Data must be in ISO8601 format, eg: 2020/01/31').toBeTruthy()
+
+    const data2 = DataNascimento.create('2020/10/201')
+
+    expect(data2.fail).toBe(true)
+    expect(data2.error).toBeInstanceOf(Error)
+    expect(data2.error.message === 'Data must be in ISO8601 format, eg: 2020/01/31').toBeTruthy()
   })
 
   it('should create with Date input', () => {

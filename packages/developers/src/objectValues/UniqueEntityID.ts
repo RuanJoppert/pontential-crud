@@ -1,7 +1,7 @@
 import { Result } from '@potential-crud/result'
-import { DomainError } from '@potential-crud/errors'
+import { AppError } from '@potential-crud/errors'
 import { ValueObject } from './valueObject'
-import { v4 as uuid } from 'uuid'
+import { nanoid } from 'nanoid'
 
 interface UniqueEntityIDProps {
   id: string
@@ -18,9 +18,9 @@ export class UniqueEntityID extends ValueObject<UniqueEntityIDProps> {
 
   static create() {
     try {
-      return Result.ok(new UniqueEntityID({ id: uuid() }))
+      return Result.ok(new UniqueEntityID({ id: nanoid() }))
     } catch (error) {
-      return Result.fail(new DomainError.UnexpectedError('Unexpected Error on generate uuid'))
+      return Result.fail(new AppError.UnexpectedError('Unexpected Error on generate uuid'))
     }
   }
 }

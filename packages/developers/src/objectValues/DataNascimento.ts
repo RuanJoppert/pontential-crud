@@ -1,5 +1,5 @@
 import { Result } from '@potential-crud/result'
-import { DomainError } from '@potential-crud/errors'
+import { AppError } from '@potential-crud/errors'
 import { ValueObject } from './valueObject'
 
 interface DataNascimentoProps {
@@ -16,7 +16,11 @@ export class DataNascimento extends ValueObject<DataNascimentoProps> {
   }
 
   static isValid(data: string) {
-    return /\d{4}\/(0?[1-9]|1[012])\/(0?[1-9]|[12][0-9]|3[01])*/g.test(data)
+    if (data.length !== 10) {
+      return false
+    }
+
+    return /([12]\d{3}\/(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01]))/g.test(data)
   }
 
   static create(data: string | Date) {
@@ -25,7 +29,7 @@ export class DataNascimento extends ValueObject<DataNascimentoProps> {
     }
 
     if (!this.isValid(data)) {
-      return Result.fail(new DomainError.InvalidInput('Data must be in ISO8601 format, eg: 2020/01/31'))
+      return Result.fail(new AppError.InvalidInput('Data must be in ISO8601 format, eg: 2020/01/31'))
     }
 
     return Result.ok(new DataNascimento({ data: new Date(data) }))

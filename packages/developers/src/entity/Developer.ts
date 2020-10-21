@@ -8,6 +8,15 @@ export interface DeveloperProps {
   datanascimento: Date | string
 }
 
+export interface DeveloperDTO {
+  id: string
+  nome: string
+  sexo: 'M' | 'F'
+  hobby?: string
+  datanascimento: Date
+  idade: number
+}
+
 export class Developer {
   private readonly _id: string
 
@@ -97,6 +106,27 @@ export class Developer {
     const id = dev._id
 
     return (new Developer(dev as any, id) as unknown) as T
+  }
+
+  static toDTO(developer: Developer | Developer[]) {
+    if (Array.isArray(developer)) {
+      return developer.map((dev) => dev.toDTO())
+    }
+
+    return developer.toDTO()
+  }
+
+  toDTO(): DeveloperDTO {
+    const DTO: DeveloperDTO = {
+      id: this.id,
+      nome: this.nome,
+      sexo: this.sexo,
+      hobby: this.hobby,
+      datanascimento: this.datanascimento,
+      idade: this.idade
+    }
+
+    return DTO
   }
 
   update(props: Partial<DeveloperProps>) {
