@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "tsnd --transpile-only --respawn --ignore-watch node_modules -r dotenv/config src/index.ts",
     "build": "rm -rf dist && tsc",
-    "test": "jest --setupFiles ./setupTests.ts --dotenv_config_path=/.env.test --runInBand --verbose",
+    "test": "jest --setupFiles ./setupTests.ts --dotenv_config_path=/.example.test.env --runInBand --verbose",
     "knex": "tsnd -r dotenv/config node_modules/.bin/knex --knexfile src/api/db/knexfile.ts",
     "bootstrap": "npm run knex migrate:rollback && npm run knex migrate:latest && npm run knex seed:run",
     "start": "node dist/src/index.js"
