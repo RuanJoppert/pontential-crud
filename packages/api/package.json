@@ -31,7 +31,7 @@
     "mysql": "^2.18.1",
     "pino": "^6.7.0",
     "potential-crud-application": "^0.2.0",
-    "potential-crud-code-styleguide": "^0.2.0",
+    "@ruanjoppert/potential-crud-code-styleguide": "^0.2.0",
     "potential-crud-developers": "^0.2.0",
     "potential-crud-errors": "^0.2.0",
     "potential-crud-result": "^0.2.0",
