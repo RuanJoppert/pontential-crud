@@ -1,3 +1,3 @@
-const { eslint } = require('potential-crud-code-styleguide')
+const { eslint } = require('@ruanjoppert/potential-crud-code-styleguide')
 
 module.exports = eslint

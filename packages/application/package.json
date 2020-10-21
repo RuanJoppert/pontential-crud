@@ -8,7 +8,7 @@
     "build": "rm -rf dist && tsc"
   },
   "dependencies": {
-    "potential-crud-code-styleguide": "^0.2.0",
+    "@ruanjoppert/potential-crud-code-styleguide": "^0.2.0",
     "potential-crud-developers": "^0.2.0",
     "potential-crud-errors": "^0.2.0",
     "potential-crud-result": "^0.2.0",
@@ -17,6 +17,6 @@
   "devDependencies": {
     "ts-node-dev": "^1.0.0"
   },
-  "gitHead": "87e57617f8b4a319fa925b080b015251224b7f6b",
+  "gitHead": "c6b7b5700c891d7b780dae839c6953b14da4597d",
   "license": "MIT"
 }
