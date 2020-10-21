@@ -1,0 +1,16 @@
+{
+  "name": "@potential-crud/result",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RuanJoppert/pontential-crud.git"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc"
+  },
+  "dependencies": {
+    "@potential-crud/code-styleguide": "^0.1.0",
+    "typescript": "^4.0.3"
+  }
+}
